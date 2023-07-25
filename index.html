@@ -1,265 +1,607 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61302010-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-61302010-1');
-    </script>
     <title>PointOdyssey</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'> -->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Fira+Sans'> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-      html,body,h1,h2,h3,h4,h5,h6 {font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;}
-      <!-- .cite { background:#f0f0f0; padding:10px; font-size:18px} -->
-      .cite { padding:0px; background:#ffffff; font-size:18px}
+      html,body,p,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+      h1 {font-size: 48px; text-shadow: 2px 2px black;}
+      p {font-size: 18px}
+      hr {border-top: 1px solid #ccc}
       .card {border: 1px solid #ccc}
-      img { margin-bottom:-6px;}
-      p { font-size:18px;}
-      a {text-decoration: none; color: #2196F3;}
-      .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-      box-shadow:
-      0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-      5px 5px 0 0px #fff, /* The second layer */
-      5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-      10px 10px 0 0px #fff, /* The third layer */
-      10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
-      15px 15px 0 0px #fff, /* The fourth layer */
-      15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
-      20px 20px 0 0px #fff, /* The fifth layer */
-      20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
-      25px 25px 0 0px #fff, /* The fifth layer */
-      25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
-      margin-left: 10px;
-      margin-right: 60px;
+      img { display:block; margin-bottom:0px;}
+      a {text-decoration: none; color: #2196F3;} 
+      .btn {margin-bottom:4px}
+      .bkg {
+      /* background-image: url("images/gates_night2.jpg"); */
+      /* box-shadow: inset 0 0 100px hsla(0,0%,0%,1.0); */
+      background-size: 100%, auto;
+      background-position: 0 50%;
+      background-color: #fff;
+      }
+      .bkg2 {
+      background-color: #000;
+      }
+      .w3-row-padding{ padding: 0 20px;}
+      .margin-top{ margin-top: 50px;}
+      .margin-bottom{ margin-bottom: 50px;}
+      .head { height:250px;}
+      .container {padding: 0; }
+      .papercontainer {
+	  min-height: 10em;
+	  display: table-cell;
+	  vertical-align: middle
+      }
+      .paper {; }
+      .padright {padding-right:1em; }
+      .padimg { padding-bottom:1em; padding-top: 1em; width: 100%}
+      .nopadimg { width: 100%}
+      .icon {
+	  float: left;
+	  width: 40px;
+	  height: 40px;
+	  margin-right: 5px;
+      }
+      .email {
+	  /* margin-top: 10px; */
+	  padding-top: 10px;
+	  /* color: #555; */
+	  float: right;
+	  height: 0;
+	  opacity: 0;
+	  transition: opacity 0.7s;
+      }
+      .papertable {
+	  width:100%;
+	  border:0px;
+	  border-spacing:0px;
+	  border-collapse:separate;
+	  margin-right:auto;
+	  margin-left:auto;
+	  margin-bottom:2em;
+      }
+      .paperimage {
+	  padding-right:2.5%;
+	  width:30%;
+	  max-width:20%;
+      }
+      .papertext {
+	  width:80%;
+	  vertical-align:middle;
+      }
+      .papertext p,h5 {
+	  margin: 5px 0px;
+      }
+      ul {
+      margin: 0 0 20px 0;
+      list-style-type: circle;
+      }
+      li {
+          margin: 10px 0;
+      }
+
+      .video-container {
+	  /* min-height: 500px; */
+	  width: 100%;
+	  position: relative;
+      }
+      .inline-video-container {
+	  /* min-height: 300px; */
+	  width: 100%;
+	  position: relative;
+      }
+      .video-container video {
+	  width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  object-fit: cover;
+	  z-index: 0;
+	  filter: brightness(50%);
+      }
+      .inline-video-container video {
+	  width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  z-index: 0;
+	  filter: brightness(50%);
+      }
+      .video-container .caption {
+	  z-index: 1;
+	  position: relative;
+	  padding: 10px;
+	  text-color: #fff;
       }
     </style>
-    <meta name="google-site-verification" content="8Q_ytX8FqHWcIDBc2IoJAwkJ35JRHclQw494GYdlHBE" />
-  </head>  
-  <body class="w3-white">
+  </head>
+  <body class="w3-white w3-margin-bottom" style="padding: 0; margins: 0;">
+    <!-- header -->
+    <div class="bkg w3-content" style="max-width:100%; margin-top:2em;">
+      <div class="video-container">
+	<video autoplay muted loop>
+	  <source src="./assets/media2-26823.mp4" type="video/mp4" />
+	</video>
+	<div class="caption">
+	  <div class="w3-row-padding w3-content" style="max-width:1200px;">
+	    <div class="w3-row w3-text-white">
+              <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+		<tr style="padding:0px">
+		  <td style="padding-right:2.5%;padding-top:25%;padding-bottom:25%;vertical-align:middle">
+		    <h1>PointOdyssey: A Large-Scale Synthetic Dataset for Long-Term Point Tracking</h1>
+		  </td>
+		</tr>
+	      </table>
+	    </div>
+	  </div>
+	</div>
+
+    </div>
+
+    <!-- <div class="w3-row w3-white w3-border w3-content" style="max-width:100%;"> -->
+    <!--   <div class="w3-row-padding w3-content w3-margin-top w3-margin-bottom" style="max-width:1200px;"> -->
+    <!-- 	<div class="container w3-text-black w3-large"> -->
+    <!-- 	  <h3>Recent news:</h3> -->
+    <!-- 	  <ul> -->
+    <!-- 	    <li>Two papers accepted to CVPR 2021!</li> -->
+    <!-- 	    <li>One paper accepted to ICLR 2021!</li> -->
+    <!-- 	    <li>I co-organized <a href="http://generativeperception.com/">Perception Through Structured Generative Models</a> at ECCV 2020.</li> -->
+    <!-- 	    <li>I co-organized <a href="http://mindsvsmachines.com/">Minds vs. Machines: How far are we from the common sense of a toddler?</a> at CVPR 2020. Videos of all the talks are now on <a href="https://www.youtube.com/watch?v=55WaJkqifIg&list=PLw-QBnA20Z6_Db2I3bJNpnkaThFJnELWB&index=2">Youtube</a>.</li> -->
+    <!-- 	    <li>I won a "Best Reviewer" award at ICCV 2019.</a> -->
+    <!-- 	    <li>I was awarded an NSERC Postgraduate Scholarship.</a> -->
+    <!-- 	  </ul> -->
+    <!-- 	</div> -->
+    <!--   </div> -->
+    <!-- </div> -->
+    
     <!-- Page Container -->
-    <div class="w3-content w3-margin-top w3-margin-bottom" style="max-width:960px;">
-
-      <!-- The Grid -->
+    <div class="w3-content w3-margin-top" style="max-width:1200px;">
       <div class="w3-row-padding">
-
-	<!-- paper container -->	  
-	<div class="w3-display-container w3-row w3-white w3-margin-bottom">
-	  <div class="w3-center">
-	    <h1>PointOdyssey</h1>
-	    <h5><a href="https://cs.cmu.edu/~aharley/">Adam W. Harley</a> &emsp;&emsp; <a href="https://zfang399.github.io/">Zhaoyuan Fang</a> &emsp;&emsp; <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></h5>
-	    <h5><em>ECCV 2022 (Oral)</em></h5>
-	  </div>
-	  <div class="w3-center">
-	    <!-- <h3>[<a href="https://github.com/aharley/pips">Code</a>] &emsp; [<a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Harley_Track_Check_Repeat_An_EM_Approach_to_Unsupervised_Tracking_CVPR_2021_paper.pdf">Paper</a>]</h3> -->
-	    <h3>[<a href="https://arxiv.org/abs/2204.04153">Paper</a>] &emsp; [<a href="https://github.com/aharley/pips">Code</a>] &emsp; [<a href="https://blog.ml.cmu.edu/2022/09/09/tracking-any-pixel-in-a-video/">Blog</a>]</h3>
-	  </div>
-	  <hr>
-
-          <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;margin-top:10px;"> -->
-	  <!--   <tr style="padding:0px"> -->
-	  <!--     <td style="padding-right:0%;width:100%;vertical-align:middle"> -->
-	  <!-- 	<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true"> -->
-	  <!-- 	  <source src="videos/horse_dense_loop.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos. -->
-	  <!-- 	</video> -->
-	  <!--     </td> -->
-	  <!--   </tr> -->
-	    <!-- </table> -->
-
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;margin-top:10px;">
-	    <tr style="padding:0px">
-	      <td style="padding-right:1%;width:32%;vertical-align:middle">
-		<!-- <div align="center">DINO</div> -->
-		<!-- <img style="width:100%;max-width:100%" alt="" src="images/camel_mask.gif"> -->
-
-		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/camel_mask_loop.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
-		</video>
-		
-	      </td>
-	      <td style="padding-right:1%;width:32%;vertical-align:middle">
-		<!-- <div align="center">RAFT</div> -->
-		<!-- <img style="width:100%;max-width:100%" alt="" src="images/fish_mask.gif"> -->
-		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/fish_mask_loop.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
-		</video>
-		
-	      </td>
-	      <td style="padding-right:1%;width:32%;vertical-align:middle">
-		<!-- <img style="width:100%;max-width:100%" alt="" src="images/dancer_mask.gif"> -->
-		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/dancer_mask_loop.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
-		</video>
-		
-	      </td>
-	    </tr>
-	  </table>
-
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;margin-top:10px;">
-	    <tr style="padding:0px">
-	      <td style="padding-right:1%;width:32%;vertical-align:middle">
-		<!-- <div align="center">DINO</div> -->
-		<!-- <img style="width:100%;max-width:100%" alt="" src="images/horse_dense.gif"> -->
-		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/horse_dense_loop.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
-		</video>
-		
-	      </td>
-	      <td style="padding-right:1%;width:32%;vertical-align:middle">
-		<!-- <div align="center">RAFT</div> -->
-		<!-- <img style="width:100%;max-width:100%" alt="" src="images/judo_dense.gif"> -->
-		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/judo_dense_loop.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
-		</video>
-	      </td>
-	      <td style="padding-right:1%;width:32%;vertical-align:middle">
-		<!-- <img style="width:100%;max-width:100%" alt="" src="images/duck_dense.gif"> -->
-		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/duck_dense_loop.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
-		</video>
-	      </td>
-	    </tr>
-	  </table>
-	  
-
-	  
-	  <!-- <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center"> -->
-	  <!--   <img src="images/fig1.png" style="width:100%"> -->
+	<div class="container w3-text-black w3-large">
+	  <!-- <h2></h2> -->
+	  <img style="width:100%;max-width:100%" alt="" src="assets/teaser.gif">
+	  <p>PointOdyssey is a a large-scale synthetic dataset for the training and evaluation of long-term fine-grained tracking algorithms.
+	    with the goal of advancing the
+	    state-of-the-art by placing emphasis on long videos with
+	    naturalistic motion.</p>
+	  <h2>Multi-modal annotations</h2>
+	  <p>We provide RGB, depth, instance segmentation, surface normals, camera intrinsics, camera extrinsics, and 2D and 3D point trajectories.</p>
+	  <img style="width:100%;max-width:100%" alt="" src="assets/demo_compressed.gif">
+	  <!-- We provide  -->
+	  <!-- <video width="100%" src="./assets/dragon_stack.mp4" type="video/mp4" autoplay="true" loop="true" playsinline="true" muted="true"></video> -->
+	  <!-- <div class="inline-video-container"> -->
+	  <!--   <video autoplay muted loop> -->
+	  <!--     <source src="./assets/dragon_stack.mp4" type="video/mp4" /> -->
+	  <!--   </video> -->
 	  <!-- </div> -->
-	  <hr>
-	  <div class="w3-center">
-	    <h2>Abstract</h2>
-	  </div>
-	  <p>Tracking pixels in videos is typically studied as an optical flow estimation problem, where every pixel is described with a displacement vector that locates it in the next frame. Even though wider temporal context is freely available, prior efforts to take this into account have yielded only small gains over 2-frame methods. In this paper, we revisit Sand and Teller's "particle video" approach, and study pixel tracking as a long-range motion estimation problem, where every pixel is described with a trajectory that locates it in multiple future frames. We re-build this classic approach using components that drive the current state-of-the-art in flow and object tracking, such as dense cost maps, iterative optimization, and learned appearance updates. We train our models using long-range amodal point trajectories mined from existing optical flow data that we synthetically augment with multi-frame occlusions. We test our approach in trajectory estimation benchmarks and in keypoint label propagation tasks, and compare favorably against state-of-the-art optical flow and feature tracking methods.</p>
-	  <hr>
+	</div>
 
-	  <!--
-	  <div class="w3-center">
-	    <h2>Video</h2>
-	  </div>
-	  <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center">
-	    <iframe width="800" height="600" src="https://www.youtube.com/embed/Jg2f5fkgxZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  </div>
-	  <hr>
-	  -->
+	
+	<ul>
+	  <li>I will give a talk at the <a href="https://www.vostdataset.org/workshop.html">Workshop on Large-scale Video Object Segmentation</a> at ICCV 2023.</li>
+	  <li>I will give a talk at the <a href="https://www.votchallenge.net/vots2023/program.html">VOTS workshop</a> at ICCV 2023.</li>
+	  <li>I gave a talk at the <a href="https://taodataset.org/workshop/cvpr23/index.html">Tracking and Its Many Guises</a> workshop at CVPR 2023.
+	  <li>I gave a talk at the <a href="https://sites.google.com/view/3d-dlad-v5-iv2023/home">3D Deep Learning for Automated Driving</a> workshop at the Intelligent Vehicles Symposium 2023.</li>
+	  <li>I co-organized <a href="http://www.generativeperception.com">Perception Through Structured Generative Models</a> at ECCV 2020.</li>
+	  <li>I co-organized <a href="https://www.youtube.com/watch?v=WRokde4btqU&list=PLw-QBnA20Z6_Db2I3bJNpnkaThFJnELWB">Minds vs. Machines: How far are we from the common sense of a toddler?</a> at CVPR 2020.</li>
+	</ul>
+	
+	<div class="container w3-text-black w3-large">
+	  <h3>Publications</h3>
+	</div>
 
-	  <div class="w3-center">
-	    <h2>Demo</h2>
-	  </div>
-	  <p><strong>Goal</strong>: Given a target pixel specified on the first frame, track that pixel across the whole video.</p>
-	  <!-- <p>Unlike feature-matching or flow-based methods, particle trajectories can track objects during and through occlusions.</p> -->
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-	    <tr style="padding:0px">
-	      <td style="padding-right:1%;width:32%;vertical-align:middle">
-		<div align="center">DINO</div>
-	      </td>
-	      <td style="padding-right:1%;width:32%;vertical-align:middle">
-		<div align="center">RAFT</div>
-	      </td>
-	      <td style="padding-right:1%;width:32%;vertical-align:middle">
-		<div align="center">PIPs (ours)</div>
-	      </td>
-	    </tr>
-	  </table>
-	  <table>
-	    <tr style="padding:0px">
-	      <td style="width:100%;vertical-align:middle">
-		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/horse_all.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
-		</video>
-	      </td>
-	    </tr>
-	  </table>
-	  <table>
-	    <tr style="padding:0px">
-	      <td style="width:100%;vertical-align:middle">
-		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/camel_all.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
-		</video>
-	      </td>
-	    </tr>
-	  </table>
-	  <table>
-	    <tr style="padding:0px">
-	      <td style="width:100%;vertical-align:middle">
-		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/dog_all.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
-		</video>
-	      </td>
-	    </tr>
-	  </table>
-	  <table>
-	    <tr style="padding:0px">
-	      <td style="width:100%;vertical-align:middle">
-		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/horse2_all.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
-		</video>
-	      </td>
-	    </tr>
-	  </table>
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/odyssey_inf.gif" class="nopadimg">
+	    </td>
+	    <td class="papertext"> 
+	      <h5>PixelOdyssey: A Large-Scale Synthetic Dataset for Long-Term Point Tracking</h5>
+	      <p>In submission</p>
+	      <p><a href="https://y-zheng18.github.io/">Yang Zheng</a>,
+		Adam W. Harley,
+		<a href="https://cs.stanford.edu/people/bshen88/">Bokui Shen</a>,
+		<a href="https://stanford.edu/~gordonwz/">Gordon Wetzstein</a>,
+		<a href="https://geometry.stanford.edu/member/guibas/">Leonidas J. Guibas</a>
+	      </p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="">Contact me for early access</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
 
-	  <!-- <p>Our model is trained once, on a large synthetic dataset.</p>n  -->
-	  <p>We call our method <strong>Persistent Independent Particles</strong>, because we treat each pixel as if it is a particle with a long-range trajectory, and we track each particle <em>independently</em>. Some computation is shared between particles, which makes inference fast, but each particle produces its own trajectory, without inspecting the trajectories of its neighbors. A side-effect of this is that we may compute particle trajectories for any given subset of pixels. For the visualization below, we computed particles at three grids of different densities.</p>
-	  <table>
-	    <tr style="padding:0px">
-	      <td style="width:100%;vertical-align:middle">
-		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/pup_vstack.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
-		</video>
-	      </td>
-	    </tr>
-	  </table>
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/bev_gif.gif" class="nopadimg">
+	    </td>
+	    <td class="papertext"> 
+	      <h5>Simple-BEV: What Really Matters for Multi-Sensor BEV Perception?</h5>
+	      <p>ICRA 2023</p>
+	      <p><strong>Adam W. Harley</strong>,
+		<a href="https://zfang399.github.io/">Zhaoyuan Fang</a>, 
+		<a href="https://www.tri.global/about-us/jie-li/">Jie Li</a>,
+		<a href="https://www.tri.global/about-us/rares-ambrus/">Rares Ambrus</a>,
+		<a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a>
+	      </p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://simple-bev.github.io/">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/2206.07959">paper</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://github.com/aharley/simple_bev">code</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
 
-	  
-	  <p>Our method initializes a zero-velocity trajectory (copying the initial position across time), and then iteratively refines the trajectory, using local appearance costs, and a learned trajectory prior. Since it reasons over multiple timesteps simultaneously, it "catch" a target after it re-emerges from an occluder, and inpaint the missing part of the trajectory.</p>
-	  <table>
-	    <tr style="padding:0px">
-	      <td style="width:100%;vertical-align:middle">
-		<!-- <img src="images/iterative_updates2.gif" style="width:100%"> -->
-		<video controls style="width:100%;max-width:100%" autoplay="true" loop="true" playsinline="true" muted="true">
-		  <source src="videos/iterative_updates2.mp4" type="video/mp4">Sorry, your browser doesn't support embedded videos.
-		</video>
-		
-	      </td>
-	    </tr>
-	  </table>
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/horse_square.gif" class="nopadimg">
+	    </td>
+	    <td class="papertext"> 
+	      <h5>Particle Video Revisited: Tracking Through Occlusions Using Point Trajectories</h5>
+	      <p>ECCV 2022 (Oral)</p>
+	      <p><strong>Adam W. Harley</strong>, <a href="https://zfang399.github.io/">Zhaoyuan Fang</a>, <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="http://particle-video-revisited.github.io/">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/2204.04153">paper</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://github.com/aharley/pips">code</a>
+	      <a class="w3-button btn w3-white w3-text-orange w3-border" href="https://blog.ml.cmu.edu/2022/09/09/tracking-any-pixel-in-a-video/">blog</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
 
-	  
-	  <!-- <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center"> -->
-	  <!--   <iframe width="800" height="600" src="https://www.youtube.com/embed/Jg2f5fkgxZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-	  <!-- </div> -->
-	  <hr>
-	  
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/em_loop.gif" class="nopadimg">
+	    </td>
+	    <td class="papertext"> 
+	      <h5>Track, Check, Repeat: An EM Approach to Unsupervised Tracking</h5>
+	      <p>CVPR 2021</p>
+	      <p><strong>Adam W. Harley</strong>, <a href="https://zuoym15.github.io/">Yiming Zuo</a>, <a href="https://wenj.github.io/">Jing Wen</a>, Ayush Mangal, Shubhankar Potdar, Ritwick Chaudhry, <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://track-check-repeat.github.io/">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/2104.03424">paper</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://github.com/aharley/track_check_repeat">code</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
 
-	  <div class="w3-row w3-margin" style="padding-bottom:2em">
-	    <div class="w3-center"><h2>Paper</h2></div>
-	    <div class="w3-col s0 m1 l2" style="height:10px"></div>
-	    <div class="w3-col s6 m3 l2">
-	      <a href="https://arxiv.org/abs/2204.04153"><img class="layered-paper-big" src="images/page.png" style="width:100%;min-height:200px; margin-right:3em"></a>
-	    </div>
-	    <div class="w3-col s6 m7 l6" style="padding-left:5em">
-	      <div class="cite">
-		Adam W. Harley, Zhaoyuan Fang, and Katerina Fragkiadaki.
-		<i>Particle Video Revisited: Tracking Through Occlusions Using Point Trajectories.</i> 
-		ECCV 2022.
-	      </div>
-	      <h3><a href="https://arxiv.org/pdf/2204.04153.pdf">[pdf]</a>&emsp;<a href="bib.txt">[bibtex]</a></h3>
-	    </div>
-	    <div class="w3-col s0 m1 l2" style="height:10px"></div>
-	  </div>
-	  <hr>
-	  
-	  <!-- end paper container -->
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/coco_arch.png" class="nopadimg">
+	    </td>
+	    <td class="papertext"> 
+	      <h5>CoCoNets: Continuous Contrastive 3D Scene Representations</h5>
+	      <p>CVPR 2021</p>
+	      <p><a href="https://shamitlal.github.io/">Shamit Lal</a>, <a href="https://mihirp1998.github.io/">Mihir Prabhudesai</a>, <a href="https://ishitamed19.github.io/">Ishita Mediratta</a>, <strong>Adam W. Harley</strong>, <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://coconets21.github.io/">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/2104.03851">paper</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://github.com/shamitlal/CoCoNets">code</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
 
-	</div><!-- End Grid -->
-      </div><!-- End Page Container -->
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/move_loop.gif" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Move to See Better: Self-Improving Embodied Object Detection</h5>
+	      <p>BMVC 2021</p>
+	      <p><a href="https://zfang399.github.io/">Zhaoyuan Fang</a>, <a href="https://ayushjain1144.github.io/">Ayush Jain</a>, <a href="https://www.gabesar.ch/">Gabriel Sarch</a>, <strong>Adam W. Harley</strong>, <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>	      
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://ayushjain1144.github.io/SeeingByMoving/">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/2012.00057">paper</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://github.com/ayushjain1144/SeeingByMoving">code</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/disen_loop.gif" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Disentangling 3D Prototypical Networks For Few-Shot Concept Learning</h5>
+	      <p>ICLR 2021</p>
+	      <p><a href="https://mihirp1998.github.io/">Mihir Prabhudesai</a>, <a href="https://shamitlal.github.io/">Shamit Lal</a>, Darshan Patil, <a href="https://sfish0101.bitbucket.io/">Hsiao-Yu Fish Tung</a>, <strong>Adam W. Harley</strong>, <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://mihirp1998.github.io/project_pages/d3dp/">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://openreview.net/forum?id=-Lr-u0b42he">paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+	
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/trackingemerges.gif" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Tracking Emerges by Looking Around Static Scenes, with Neural 3D Mapping</h5>
+	      <p>ECCV 2020</p>
+	      <p><strong>Adam W. Harley</strong>, Shrinidhi KL, Paul Schydlo, <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/2008.01295">paper</a>
+	      <a class="w3-button btn w3-white w3-text-orange w3-border" href="https://www.rsipvision.com/ECCV2020-Monday/12/">ECCV Daily interview</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+	
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/3dq_loop.gif" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>3D Object Recognition By Corresponding and Quantizing Neural 3D Scene Representations</h5>
+	      <p>CVPR workshops 2020</p>
+	      <p><a href="https://mihirp1998.github.io/">Mihir Prabhudesai</a>, <a href="https://shamitlal.github.io/">Shamit Lal</a>, <a href="https://sfish0101.bitbucket.io/">Hsiao-Yu Fish Tung</a>, <strong>Adam W. Harley</strong>, <a href="http://smpotdar.com/">Shubhankar Potdar</a>, <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://mihirp1998.github.io/project_pages/3dq/">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/2010.16279">paper</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://openaccess.thecvf.com/content_CVPRW_2020/papers/w26/Prabhudesai_3DQ-Nets_Visual_Concepts_Emerge_in_Pose_Equivariant_3D_Quantized_Neural_CVPRW_2020_paper.pdf">workshop paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+	
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/emblang_panel.png" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Embodied Language Grounding With 3D Visual Feature Representations</h5>
+	      <p>CVPR 2020</p>
+	      <p><a href="https://mihirp1998.github.io/">Mihir Prabhudesai</a>, <a href="https://sfish0101.bitbucket.io/">Hsiao-Yu Fish Tung</a>, Syed Ashar Javed, Maximilian Sieb, <strong>Adam W. Harley</strong>, <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://mihirp1998.github.io/project_pages/emblang">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/1910.01210">paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/feats.gif" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Learning from Unlabelled Videos Using Contrastive Predictive Neural 3D Mapping</h5>
+	      <p>ICLR 2020</p>
+	      <p><strong>Adam W. Harley</strong>, <a href="https://www.ri.cmu.edu/ri-people/fangyu-li/">Fangyu Li</a>, Shrinidhi K. Lakshmikanth, Xian Zhou, <a href="https://sfish0101.bitbucket.io/">Hsiao-Yu Fish Tung</a>, <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="viewcontrast">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/1906.03764">paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/sigg2.png" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>VR Facial Animation via Multiview Image Translation</h5>
+	      <p>SIGGRAPH 2019</p>
+	      <p><a href="https://scholar.google.com.tw/citations?user=sFQD3k4AAAAJ">Shih-En Wei</a>, <a href="https://scholar.google.com/citations?user=ss-IvjMAAAAJ&hl=en">Jason Saragih</a>, <a href="https://scholar.google.com/citations?user=7aabHgsAAAAJ&hl=en">Tomas Simon</a>, <strong>Adam W. Harley</strong>, <a href="https://stephenlombardi.github.io/">Stephen Lombardi</a>, Michal Perdoch, Alexander Hypes, Dawei Wang, Hernan Badino, <a href="http://www.cs.cmu.edu/~yaser/">Yaser Sheikh</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://research.fb.com/publications/vr-facial-animation-via-multiview-image-translation/">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://research.fb.com/wp-content/uploads/2019/06/VR-Facial-Animation-via-Multiview-Image-Translation.pdf">paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/uncoop.png" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Image Disentanglement and Uncooperative Re-Entanglement for High-Fidelity Image-to-Image Translation</h5>
+	      <p>ICCV 2019 AIM workshop (Advances in Image Manipulation)</p>
+	      <p><strong>Adam W. Harley</strong>, Shih-En Wei, Jason Saragih, and <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/1901.03628">paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+	
+
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/narr.png" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Reward Learning from Narrated Demonstrations</h5>
+	      <p>CVPR 2018</p>
+	      <p><a href="https://sfish0101.bitbucket.io/">Hsiao-Yu Fish Tung</a>, <strong>Adam W. Harley</strong>, Liang-Kang Huang, and <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/1804.10692">paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+	
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/cow.png" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Adversarial Inverse Graphics Networks: Learning 2D-to-3D Lifting and Image-to-Image Translation from Unpaired Supervision</h5>
+	      <p>ICCV 2017</p>
+	      <p><a href="https://sfish0101.bitbucket.io/">Hsiao-Yu Fish Tung</a>, <strong>Adam W. Harley</strong>, William Seto, and <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/1705.11166">paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+	
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/bike.png" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Segmentation-Aware Convolutional Networks Using Local Attention Masks</h5>
+	      <p>ICCV 2017</p>
+	      <p><strong>Adam W. Harley</strong>, <a href="https://csprofkgd.github.io/">Konstantinos G. Derpanis</a>, and <a href="http://www0.cs.ucl.ac.uk/staff/I.Kokkinos/">Iasonas Kokkinos</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="segaware">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/1708.04607">paper</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://github.com/aharley/segaware">code</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+	
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/unsupervised_flow.png" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Back to Basics: Unsupervised Learning of Optical Flow via Brightness Constancy and Motion Smoothness</h5>
+	      <p>ECCV Workshops 2016</p>
+	      <p><a href="http://scs.ryerson.ca/~jjyu/">Jason J. Yu</a>, <strong>Adam W. Harley</strong>, and <a href="https://csprofkgd.github.io/">Konstantinos G. Derpanis</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="http://scs.ryerson.ca/~jjyu/projects/unsupervised/optical/flow/machine/learning/2016/08/29/Unsup-flow.html">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/1608.05842">paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/boats.png" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Segmentation-Aware Convolutional Nets</h5>
+	      <p>Master's Thesis</p>
+	      <p><strong>Adam W. Harley</strong> (Advised by <a href="https://csprofkgd.github.io/">Konstantinos G. Derpanis</a>)</p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="msc">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="msc/harley_msc_thesis.pdf">paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/cats.png" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Learning Dense Convolutional Embeddings for Semantic Segmentation</h5>
+	      <p>ICLR 2016 (Workshop)</p>
+	      <p><strong>Adam W. Harley</strong>, <a href="https://csprofkgd.github.io/">Konstantinos G. Derpanis</a>, and <a href="http://www0.cs.ucl.ac.uk/staff/I.Kokkinos/">Iasonas Kokkinos</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="iclr16">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/1511.04377">paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/map10.png" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>Evaluation of Deep Convolutional Nets for Document Image Classification and Retrieval</h5>
+	      <p>ICDAR 2015 (Best Student Paper Award)</p>
+	      <p><strong>Adam W. Harley</strong>, Alex Ufkes, and <a href="https://csprofkgd.github.io/">Konstantinos G. Derpanis</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="icdar15">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="https://arxiv.org/abs/1502.07058">paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+	
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/rvl-cdip.png" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>RVL-CDIP dataset</h5>
+	      <p><strong>Adam W. Harley</strong>, Alex Ufkes, and <a href="https://csprofkgd.github.io/">Konstantinos G. Derpanis</a></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="rvl-cdip">project page</a>
+	      <a class="w3-button btn w3-white w3-text-orange w3-border" href="https://huggingface.co/datasets/rvl_cdip">HuggingFace integration</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+	
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <!-- <img src="images/vis_preview4.png" class="nopadimg"> -->
+	      <img src="images/vis10.gif" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>An Interactive Node-Link Visualization of Convolutional Neural Networks</h5>
+	      <p>ISVC 2015</p>
+	      <p><strong>Adam W. Harley</strong></p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="nn_vis">project page</a>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="nn_vis/harley_vis_isvc15.pdf">paper</a>
+	      <a class="w3-button btn w3-white w3-text-orange w3-border" href="http://www.popsci.com/gaze-inside-mind-artificial-intelligence">PopSci article</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+	
+	<!-- paper table -->
+        <table class="papertable"> 
+	  <tr style="padding:0px">
+	    <td class="paperimage"> 
+	      <img src="images/stimuli.png" class="nopadimg">
+	    </td>
+	    <td class="papertext">
+	      <h5>The Effect of Cognitive Switching on Sustained Attention</h5>
+	      <p>Undergraduate Thesis</p>
+	      <p><strong>Adam W. Harley</strong> (Advised by <a href="https://apps.ualberta.ca/directory/person/bjdyson">Benjamin Dyson</a>)</p>
+	      <a class="w3-button btn w3-white w3-text-blue w3-border" href="misc/HARLEYthesis2012.pdf">paper</a>
+	    </td>
+	  </tr>
+	</table>
+	<!-- end paper table -->
+
+	<hr>
+      </div>
+    </div>
 
   </body>
 </html>
