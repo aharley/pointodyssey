@@ -3,6 +3,10 @@
   <head>
     <title>PointOdyssey</title>
     <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+    <!-- <\!-- <link rel="stylesheet" href="css/bootstrap.css"> -\-> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
@@ -10,7 +14,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       html,body,p,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
-      h1 {font-size: 48px; text-shadow: 2px 2px 10px black;}
+      h1,h2,h3,h4,h5,h6 {font-weight: 500;}
+      /* h1 {font-size: 48px; text-shadow: 2px 2px 10px black;} */
+      h1 {font-size: 48px}
+      h2 {font-size: 36px}
       p {font-size: 18px}
       ol {font-size: 18px}
       hr {border-top: 1px solid #ccc}
@@ -143,10 +150,90 @@
       margin-left: 10px;
       margin-right: 60px;
       }
+
+      .w3-top {
+	  z-index: 2;
+	  vertical-align:middle;
+      }
+
+      /* Add a black background color to the top navigation */
+      .topnav {
+	  background-color: #fff;
+	  overflow: hidden;
+      }
+
+      .topnav p {
+	  float: left;
+	  color: #333;
+	  text-align: center;
+	  margin: 0;
+	  padding: 20px 20px;
+	  text-decoration: none;
+	  font-weight: bold;
+	  font-size: 18px;
+      }
+      
+      .topnav a {
+	  float: right;
+	  color: #333;
+	  text-align: center;
+	  padding: 20px 20px;
+	  text-decoration: none;
+	  font-size: 18px;
+      }
+      .topnav a:hover {
+	  background-color: #ddd;
+	  color: black;
+      }
+      .topnav a.active {
+	  background-color: #2196F3;
+	  color: white;
+      }
+      
+      
+      /* .navbar a { */
+      /* 	  border-bottom: 0; */
+      /* } */
+      
+
+      .instructorphoto img {
+	  width: 160px;
+	  height: 160px;
+	  border-radius: 160px;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+      }
+      .instructor {
+	  display: inline-block;
+	  width: 160px;
+	  text-align: center;
+	  /* margin-right: 10px; */
+	  font-size: 18px;
+	  margin-bottom: 10px;
+      }
+      .instructor-institute{
+	  color: #000000;
+	  font-size: 14px;
+      }
       
     </style>
   </head>
   <body class="w3-white w3-margin-bottom" style="padding: 0; margins: 0;">
+
+    <!-- <div class="w3-top"> -->
+    <!--   <div class="w3-bar"> -->
+    <!-- 	<\!-- <div class="w3-content"> -\-> -->
+    <!-- 	  <div class="topnav"> -->
+    <!-- 	    <p>PointOdyssey</p> -->
+    <!-- 	    <a href="#news">News</a> -->
+    <!-- 	    <a href="#contact">Contact</a> -->
+    <!-- 	    <a href="#about">About</a> -->
+    <!-- 	  </div> -->
+    <!-- 	</div> -->
+    <!--   </div> -->
+    <!-- </div> -->
+    
+    
     <div class="video-container">
       <video autoplay muted loop>
 	<source src="./assets/media2-26823.mp4" type="video/mp4" />
@@ -172,19 +259,7 @@
 	</div> <!-- end 1200 -->
       </div>  <!-- end video caption -->
     </div> <!-- end video container -->
-    <!-- <div class="w3-black" style="margin-top:0"> -->
-    <!--   <div class="w3-content" style="max-width:1200px;"> -->
-    <!-- 	<div class="w3-row-padding"> -->
-    <!-- 	  <h2>Download the dataset: <a href="">Google Drive</a> or <a href="">HuggingFace</a>.</h2> -->
-    <!-- 	  <h2>Generate more data: <a href="https://github.com/y-zheng18/point_odyssey">GitHub</a>.</h2> -->
-    <!-- 	<\!-- <div class="w3-center"> -\-> -->
-    <!-- 	  <\!--   <h2>Download</h2> -\-> -->
-    <!-- 	  <\!--   <p><a href="">HuggingFace link</a> -\-> -->
-    <!-- 	    <\!--   <p><a href="">GoogleDrive link</a> -\-> -->
-    <!-- 	    <\!-- </div> -\-> -->
-    <!-- 	</div> <\!-- end row -\-> -->
-    <!--   </div> -->
-      <!-- </div> -->
+    
     <div class="w3-content" style="max-width:1200px;">
       <div class="w3-row-padding">
 	<div class="w3-center">
@@ -207,13 +282,9 @@
 	  PointOdyssey as well as on two real-world benchmarks.
 	</p>
       </div> <!-- end row -->
-      <!-- 	  <h2>Overview</h2> -->
-      <!-- 	</div> -->
-      <!-- 	<p>PointOdyssey is a dataset designed for <strong>fine-grained long-range tracking</strong> algorithms. The goal of fine-grained long-range tracking is: given any pixel coordinate in any frame of a video, track the corresponding world surface point for as long as possible. <p> -->
-      <!-- 	<\!-- <p>While there exist multiple generations of datasets targeting fine-grained short-range tracking (i.e., optical flow), and annually updated datasets targeting several forms of coarse-grained long-range tracking (i.e., single-object tracking, multi-object tracking, video object segmentation), there are only a handful of works at the intersection of fine-grained <strong>and</strong> long-range tracking.</p> -\-> -->
-      <!-- </div> <\!-- end row -\-> -->
-      <hr>
-      <div class="w3-row-padding w3-black">
+    </div> <!-- end 1200 -->
+    <div class="w3-light-gray">
+      <div class="w3-row-padding w3-content" style="max-width:1200px;">
 	<div class="w3-center">
 	  <h2>Dataset</h2>
 	  <p>105 videos. ~163,000 frames. ~20,000 trajectories per video.</p>
@@ -223,21 +294,16 @@
 	<div class="w3-center">
 	  <h3>Download from <a href="">Google Drive</a> or <a href="">HuggingFace</a>.</h3>
 	</div>
-      </div> <!-- end row -->
-
-      <hr>
-      <div class="w3-row-padding">
-	<div class="w3-center">
-	  <h2>Data Generator</h2>
-	  <p>A scalable framework for generating realistic training data with rich and accurate annotations for video understanding.</p>
-	  <img style="width:100%;max-width:100%" alt="" src="assets/pipeline.png">
-	  <!-- <img style="width:100%;max-width:100%" alt="" src="assets/outdoor_multiview.jpeg"> -->
-	  <h3>Clone the repo on <a href="https://github.com/y-zheng18/point_odyssey">GitHub</a>.</h3>
-	</div>
-	<!-- <p>We randomly generate physically realistic and semantically plausible scenes by sampling human and animal subjects, motion trajectories for the subjects and the camera, 3D physical assets, materials, environment maps for outdoor scenes, manually created environments for indoor scenes, as well as lighting and atmospheric effects.  -->
-	<!--   From these scenes we render videos, paired with various ground truth, with our main highlight being full-video-length trajectories of the points visible in the first frame.<p> -->
-      </div> <!-- end row -->
-
+      </div> <!-- end 1200 -->
+    </div> <!-- end gray -->
+    <div class="w3-row-padding w3-content" style="max-width:1200px;">
+      <div class="w3-center">
+	<h2>Data Generator</h2>
+	<p>A scalable framework for generating realistic training data with rich and accurate annotations for video understanding.</p>
+	<img style="width:100%;max-width:100%" alt="" src="assets/pipeline.png">
+	<!-- <img style="width:100%;max-width:100%" alt="" src="assets/outdoor_multiview.jpeg"> -->
+	<h3>Clone the repo on <a href="https://github.com/y-zheng18/point_odyssey">GitHub</a>.</h3>
+      </div>
 
       <hr>
       <div class="w3-row-padding">
@@ -272,6 +338,7 @@
 	</div>
 	<div class="w3-col s0 m1 l2" style="height:10px"></div>
       </div>
+
       
       <hr>
       <div class="w3-row-padding">
