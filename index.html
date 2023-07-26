@@ -12,11 +12,19 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Fira+Sans'> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    
     <style>
-      html,body,p,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
-      h1,h2,h3,h4,h5,h6 {font-weight: 500;}
+      html,body,p,h1,h2,h3,h4,h5,h6 {
+	  /* font-family: "Roboto", sans-serif; */
+	  font-family: "Optimistic Display", sans-serif;
+	  line-height: 1.4em;
+	  -webkit-font-smoothing: antialiased;
+      }
+      h1,h2,h3,h4,h5,h6 {font-weight: 400;}
       /* h1 {font-size: 48px; text-shadow: 2px 2px 10px black;} */
-      h1 {font-size: 48px}
+      /* h1 {font-size: 36px} */
+      h1 {font-size: 56px}
       h2 {font-size: 36px}
       p {font-size: 18px}
       ol {font-size: 18px}
@@ -93,6 +101,65 @@
       li {
           margin: 10px 0;
       }
+
+      .d-flex {
+	  display: flex;
+      }
+      .align-items-center {
+	  align-items: center;
+      }
+      
+
+      .button {
+	  background-color: #2196F3;
+	  border: none;
+	  padding: 5px 10px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  margin: 5px 5px;
+	  /* font-size: 16px; */
+	  /* margin: 4px 2px; */
+	  transition-duration: 0.4s;
+	  cursor: pointer;
+	  border-radius: 8px;
+      }
+
+      .button2 {
+	  background-color: #fff;
+	  border: 2px solid #2196F3;
+      }
+
+      .button2:hover {
+	  background-color: #2196F3;
+	  color: white;
+      }
+      
+
+      /* .button { */
+      /* 	  background-color: white; */
+      /* 	  color: black; */
+      /* 	  border: 2px solid #008CBA; */
+      /* } */
+
+      /* .button1:hover { */
+      /* 	  background-color: #ff8CBA; */
+      /* 	  color: white; */
+      /* } */
+      
+
+      .row {
+	  width: 100%;
+	  height: 100%;
+	  display:table-row;
+	  background: #ddd;
+      }
+      .col-left, .col-right {
+	  width: 50%;
+	  display: table-cell;
+	  vertical-align: middle;
+      }
+      
 
       .video-container {
 	  /* min-height: 500px; */
@@ -242,20 +309,36 @@
       <div class="caption">
 	<div class="w3-row-padding w3-content" style="max-width:1200px;">
 	  <div class="w3-row w3-text-white">
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-	      <tr style="padding:0px">
-		<td style="padding-top:25%;padding-bottom:25%;vertical-align:middle">
-		  <h1>PointOdyssey: A Large-Scale Synthetic Dataset for Long-Term Point Tracking</h1>
-		  <h3><a href="https://y-zheng18.github.io/">Yang Zheng</a>,
-		    <a href="https://adamharley.com/">Adam W. Harley</a>,
-		    <a href="https://cs.stanford.edu/people/bshen88/">Bokui Shen</a>,
-		    <a href="https://stanford.edu/~gordonwz/">Gordon Wetzstein</a>,
-		    <a href="https://geometry.stanford.edu/member/guibas/">Leonidas J. Guibas</a>
-		  </h3>
-		  <h3>ICCV 2023</h3>
-		</td>
-	      </tr>
-	    </table>
+	    <!-- <div class="w3-col s0 m3 l0" style="height:10px"></div> -->
+	    <!-- <div class="w3-col s0 m9 l6"> -->
+              <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+		<tr style="padding:0px">
+		  <td style="padding-top:30%;padding-bottom:30%;vertical-align:middle">
+		    <div class="w3-center">
+		      <h1>PointOdyssey</h1>
+		      <h4>A Large-Scale Synthetic Dataset for Long-Term Point Tracking</h4>
+		      <!-- <p> -->
+		      <!-- 	<a href="https://y-zheng18.github.io/">Yang Zheng</a>, -->
+		      <!-- 	<a href="https://adamharley.com/">Adam W. Harley</a>, -->
+		      <!-- 	<a href="https://cs.stanford.edu/people/bshen88/">Bokui Shen</a>, -->
+		      <!-- 	<a href="https://stanford.edu/~gordonwz/">Gordon Wetzstein</a>, -->
+		      <!-- 	<a href="https://geometry.stanford.edu/member/guibas/">Leonidas J. Guibas</a> -->
+		      <!-- </p> -->
+		    </div>
+		    <!-- <h3>ICCV 2023</h3> -->
+		    <!-- <p>Yang Zheng</p> -->
+		    <!-- <p>Adam W. Harley</p> -->
+		    <!-- <p>Bokui Shen</p> -->
+		    <!-- <p>Gordon Wetzstein</p> -->
+		    <!-- <p>Leonidas J. Guibas</p> -->
+		    <!-- <p>Yang Zheng, Adam W. Harley, Bokui Shen, Gordon Wetzstein, Leonidas J. Guibas</p> -->
+		    <!-- <p>Yang Zheng, Adam W. Harley, Bokui Shen, Gordon Wetzstein, Leonidas J. Guibas</p> -->
+		    <!-- <p>ICCV 2023</p> -->
+		  </td>
+		</tr>
+	      </table>
+	    <!-- </div> -->
+	    <!-- <div class="w3-col s0 m3 l5" style="height:10px"></div> -->
 	  </div>
 	</div> <!-- end 1200 -->
       </div>  <!-- end video caption -->
@@ -288,60 +371,77 @@
       <div class="w3-row-padding w3-content" style="max-width:1200px;">
 	<div class="w3-center">
 	  <h2>Dataset</h2>
-	  <p>105 videos. ~163,000 frames. ~20,000 trajectories per video.</p>
+	  <h4>105 videos. ~163,000 frames. ~20,000 trajectories per video.</h4>
 	  <img style="width:100%;max-width:100%" alt="" src="assets/teaser.gif">
 	</div>
 	<p>To make the data useful for multiple tasks, we provide multi-modal data: RGB, depth, instance segmentation, surface normals, camera intrinsics, camera extrinsics, and 2D and 3D point trajectories. For a subset of the scenes, we include multiple synchronized views.</p>
 	<div class="w3-center">
-	  <h3>Download from <a href="">Google Drive</a> or <a href="">HuggingFace</a>.</h3>
+	  <a class="button button2" href=""><h5>Download from Google Drive</h5></a>
+	  <a class="button button2" href=""><h5>Download from HuggingFace</h5></a>
 	</div>
       </div> <!-- end 1200 -->
     </div> <!-- end gray -->
-    <div class="w3-row-padding w3-content" style="max-width:1200px;">
-      <div class="w3-center">
-	<h2>Data Generator</h2>
-	<p>A scalable framework for generating realistic training data with rich and accurate annotations for video understanding.</p>
-	<img style="width:100%;max-width:100%" alt="" src="assets/pipeline.png">
-	<!-- <img style="width:100%;max-width:100%" alt="" src="assets/outdoor_multiview.jpeg"> -->
-	<h3>Clone <a href="https://github.com/y-zheng18/point_odyssey">point_odyssey</a> on GitHub.</h3>
-      </div>
 
+
+    <div class="w3-content" style="max-width:1200px;">
+      <div class="w3-row-padding">
+	<div class="w3-center">
+	  <h2>Simulation Engine</h2>
+	  <h4>A scalable framework for generating realistic training data with rich annotations for video understanding.</h4>
+	  <img style="width:100%;max-width:100%" alt="" src="assets/pipeline.png">
+	</div>
+	<p>We randomly generate physically realistic and semantically plausible
+	  scenes, by sampling human and animal subjects, motion trajectories for the subjects and the camera, 3D physical assets,
+	  materials, environment maps for outdoor scenes, manually created environments for indoor scenes, as well as lighting and
+	  atmospheric effects. From these scenes we render videos, paired with various ground truth.</p>
+	<div class="w3-center">
+	  <a class="button button2" href="https://github.com/y-zheng18/point_odyssey"><h5>Clone PointOdyssey on GitHub</h5></a>
+	</div>
+      </div> <!-- end row-padding -->
+      
       <hr>
+      
       <div class="w3-row-padding">
 	<div class="w3-center">
 	  <h2>PIPs++</h2>
-	  <p>A new state-of-the-art for long-range point tracking.</p>
+	  <h4>A new state-of-the-art for long-range point tracking.</h4>
 	  <img style="width:100%;max-width:100%" alt="" src="assets/point_tracks.png">
 	</div>
 	<p>We modify <a href="https://particle-video-revisited.github.io/">PIPs</a>, greatly widening its 8-frame temporal window, and incorporating a template-update mechanism. Experimental results show that our method achieves higher tracking accuracy than all existing methods, both on the PointOdyssey test set and real-world benchmarks.
 	  <div class="w3-center">
-	    <h3>Clone <a href="https://github.com/aharley/pips/">pips</a> on GitHub.</h3>
+	    <!-- <h3>Clone <a href="https://github.com/aharley/pips/">pips</a> on GitHub.</h3> -->
+	    <a class="button button2" href="https://github.com/aharley/pips"><h5>Clone PIPs on GitHub</h5></a>
 	  </div>
-      </div> <!-- end row -->
-
-
-      <hr>
-      <div class="w3-row-padding">
-	<div class="w3-center"><h2>Paper</h2></div>
-	<div class="w3-col s0 m1 l2" style="height:10px"></div>
-	<div class="w3-col s6 m3 l2">
-	  <a href=""><img class="layered-paper-big" src="assets/page1.png" style="width:100%;min-height:150px; margin-right:3em"></a>
-	</div>
-	<div class="w3-col s6 m7 l6" style="padding-left:5em">
-	  <div class="cite">
-	    <p>
-	      Yang Zheng, Adam W. Harley, Bokui Shen, Gordon Wetzstein, Leonidas J. Guibas.
-	      <i>PointOdyssey: A Large-Scale Synthetic Dataset for Long-Term Point Tracking.</i>
-	      ICCV 2023.
-	    </p>
+      </div> <!-- end row-padding -->
+    </div> <!-- end 1200 -->
+    
+    <div class="w3-light-gray">
+      <div class="w3-content" style="max-width:1200px;">
+	<div class="w3-row-padding">
+	  <div class="w3-center">
+	    <h2>Paper</h2>
+	    <h4>Published at ICCV 2023.</h4>
+	    <img style="width:100%;max-width:100%" alt="" src="assets/paper_wide.jpeg">
+	    <!-- <img style="max-width:200px; -->
+	    <!-- 	      display: block; -->
+	    <!-- 	      margin-left: auto; -->
+	    <!-- 	      margin-right: auto; -->
+	    <!-- 	      width: 100%;" -->
+	    <!--      alt="" src="assets/paper_wide.jpeg"> -->
 	  </div>
-	  <h3><a href="">abs</a>&emsp;<a href="">pdf</a></h3>
-	</div>
-	<div class="w3-col s0 m1 l2" style="height:10px"></div>
-      </div>
-
+	  <h5>Yang Zheng, Adam W. Harley, Bokui Shen, Gordon Wetzstein, Leonidas J. Guibas.
+	    <i>PointOdyssey: A Large-Scale Synthetic Dataset for Long-Term Point Tracking.</i>
+	    ICCV 2023.</h5>
+	  <div class="w3-center">
+	    <a class="button button2" href=""><h5>abs</h5></a>
+	    <a class="button button2" href=""><h5>pdf</h5></a>
+	    <a class="button button2" href=""><h5>supp</h5></a>
+	  </div>
+	</div> <!-- end row-padding -->
+      </div> <!-- end 1200 -->
+    </div> <!-- end gray -->
       
-      <hr>
+    <div class="w3-content" style="max-width:1200px;">
       <div class="w3-row-padding">
 	<div class="w3-center"><h2>Bibtex</h2></div>
 	<div class="w3-code notranslate">
@@ -352,7 +452,7 @@
 	  &emsp;year      = {2023}<br>
 	  }
 	</div>
-      </div> <!-- end row -->
+      </div> <!-- end row-padding -->
     </div> <!-- end 1200 -->
       
   </body>
