@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Fira+Sans'> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    
     <style>
+      html {
+	  background: #000;
+      }
       html,body,p,h1,h2,h3,h4,h5,h6 {
 	  /* font-family: "Roboto", sans-serif; */
 	  font-family: "Optimistic Display", sans-serif;
@@ -165,6 +165,7 @@
 	  /* min-height: 500px; */
 	  width: 100%;
 	  position: relative;
+	  background-color: #000;
       }
       .inline-video-container {
 	  /* min-height: 300px; */
@@ -228,6 +229,10 @@
       .topnav {
 	  background-color: #fff;
 	  overflow: hidden;
+	  border-bottom: 1px solid #c0c0c0;
+	  padding: 0px 10px; 
+	  font-size: 16px;
+	  opacity: 90%; 
       }
 
       .topnav p {
@@ -235,10 +240,9 @@
 	  color: #333;
 	  text-align: center;
 	  margin: 0;
-	  padding: 20px 20px;
 	  text-decoration: none;
-	  font-weight: bold;
-	  font-size: 18px;
+	  font-weight:bold; 
+	  padding: 20px 20px;
       }
       
       .topnav a {
@@ -246,8 +250,7 @@
 	  color: #333;
 	  text-align: center;
 	  padding: 20px 20px;
-	  text-decoration: none;
-	  font-size: 18px;
+	  text-decoration: underline;
       }
       .topnav a:hover {
 	  background-color: #ddd;
@@ -257,54 +260,120 @@
 	  background-color: #2196F3;
 	  color: white;
       }
-      
-      
-      /* .navbar a { */
-      /* 	  border-bottom: 0; */
-      /* } */
-      
 
-      .instructorphoto img {
-	  width: 160px;
-	  height: 160px;
-	  border-radius: 160px;
-	  margin-top: 10px;
-	  margin-bottom: 10px;
-      }
-      .instructor {
+      .author {
 	  display: inline-block;
 	  width: 160px;
 	  text-align: center;
-	  /* margin-right: 10px; */
-	  font-size: 18px;
+	  font-size: 16px;
 	  margin-bottom: 10px;
+	  padding: 10px 10px;
+	  background: #fff;
+	  border-radius: 20px;
       }
-      .instructor-institute{
+      .author a{
+	  color: black;
+	  text-decoration: none;
+      }
+      .author:hover {
+	  background: #f0f0f0;
+      }
+      .authorphoto img {
+	  width: 140px;
+	  height: 140px;
+	  border-radius: 140px;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+	  padding: 10px 10px; 
+      }
+      
+      .author-institute{
 	  color: #000000;
 	  font-size: 14px;
       }
+
+      .footer {
+	  left: 0;
+	  bottom: 0;
+	  width: 100%;
+	  height: 100px;
+	  background-color: #000;
+	  color: white;
+	  text-align: center;
+      }
+
+      a.anchor {
+	  display: block;
+	  position: relative;
+	  top: -50px;
+	  visibility: hidden;
+      }
+      
+
+
+
+      /* replaces the "cover" image in html5 video */
+      #container {
+	  background-image: url("./assets/preview_frame.png");
+	  background-size: cover;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-color: black;
+      }
+      #video {
+	  opacity: 0;                /* start faded out */
+	  transition: opacity 3s;    /* css fade in */
+      }
       
     </style>
-  </head>
-  <body class="w3-white w3-margin-bottom" style="padding: 0; margins: 0;">
+    <script type='text/javascript' src='http://peoplesriverhistory.us/wp-content/plugins/jquery-updater/js/jquery-3.7.0.min.js?ver=3.7.0' id='jquery-core-js'></script>
+    <script type="text/javascript">
+      /* wait for all elements of DOM to be rendered */
+      $(document).ready(function() {
 
-    <!-- <div class="w3-top"> -->
-    <!--   <div class="w3-bar"> -->
-    <!-- 	<\!-- <div class="w3-content"> -\-> -->
-    <!-- 	  <div class="topnav"> -->
-    <!-- 	    <p>PointOdyssey</p> -->
-    <!-- 	    <a href="#news">News</a> -->
-    <!-- 	    <a href="#contact">Contact</a> -->
-    <!-- 	    <a href="#about">About</a> -->
-    <!-- 	  </div> -->
-    <!-- 	</div> -->
-    <!--   </div> -->
-    <!-- </div> -->
+	  /* force some of these attr */
+	  $("#video").attr({"autoplay": true,
+			    "muted": true});
+
+	  /* ensure that video ends on last frame
+	     rather than rewind to beginning
+	     $("#video").mediaelementplayer({autoRewind: false}); */
+	  /* double ensure that video is muted otherwise chrome
+	     won't autostart */
+	  $("#video").prop('muted', true);
+
+	  /* when video auto plays, it fades in */
+	  $("#video").bind('play', function (e) {
+	      $("#video").css('opacity', 1.0);
+	  });
+      });
+    </script>
+
+  </head>
+  <body class="w3-white" style="padding:0; margins:0;">
+
+    <a class="anchor" class="top" id="home"></a>
+    <div class="w3-top">
+      <div class="w3-bar">
+	<!-- <div class="w3-content"> -->
+	  <div class="topnav">
+	    <a href="#home" style="float:left;text-decoration:none;font-weight:bold;font-size:18px">PointOdyssey</a>
+	    <div class="w3-hide-small">
+	      <a href="#team">Team</a>
+	      <a href="#paper">Paper</a>
+	      <a href="#model">Model</a>
+	      <a href="#simulator">Simulator</a>
+	      <a href="#dataset">Dataset</a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
     
     
     <div class="video-container">
-      <video autoplay muted loop>
-	<source src="./assets/media2-26823.mp4" type="video/mp4" />
+      <video id='video' controls="controls" muted="muted" autoplay="true" loop="true" preload='none'>
+	<source src="./assets/media2-26823.mp4#t=0.1" type="video/mp4" />
       </video>
       <div class="caption">
 	<div class="w3-row-padding w3-content" style="max-width:1200px;">
@@ -318,12 +387,12 @@
 		      <h1>PointOdyssey</h1>
 		      <h4>A Large-Scale Synthetic Dataset for Long-Term Point Tracking</h4>
 		      <!-- <p> -->
-		      <!-- 	<a href="https://y-zheng18.github.io/">Yang Zheng</a>, -->
-		      <!-- 	<a href="https://adamharley.com/">Adam W. Harley</a>, -->
-		      <!-- 	<a href="https://cs.stanford.edu/people/bshen88/">Bokui Shen</a>, -->
-		      <!-- 	<a href="https://stanford.edu/~gordonwz/">Gordon Wetzstein</a>, -->
-		      <!-- 	<a href="https://geometry.stanford.edu/member/guibas/">Leonidas J. Guibas</a> -->
-		      <!-- </p> -->
+			<!-- 	<a href="https://y-zheng18.github.io/">Yang Zheng</a>, -->
+			<!-- 	<a href="https://adamharley.com/">Adam W. Harley</a>, -->
+			<!-- 	<a href="https://cs.stanford.edu/people/bshen88/">Bokui Shen</a>, -->
+			<!-- 	<a href="https://stanford.edu/~gordonwz/">Gordon Wetzstein</a>, -->
+			<!-- 	<a href="https://geometry.stanford.edu/member/guibas/">Leonidas J. Guibas</a> -->
+			<!-- </p> -->
 		    </div>
 		    <!-- <h3>ICCV 2023</h3> -->
 		    <!-- <p>Yang Zheng</p> -->
@@ -337,7 +406,7 @@
 		  </td>
 		</tr>
 	      </table>
-	    <!-- </div> -->
+	      <!-- </div> -->
 	    <!-- <div class="w3-col s0 m3 l5" style="height:10px"></div> -->
 	  </div>
 	</div> <!-- end 1200 -->
@@ -367,6 +436,8 @@
 	</p>
       </div> <!-- end row -->
     </div> <!-- end 1200 -->
+    
+    <a class="anchor" class="top" id="dataset"></a>
     <div class="w3-light-gray">
       <div class="w3-row-padding w3-content" style="max-width:1200px;">
 	<div class="w3-center">
@@ -383,6 +454,7 @@
     </div> <!-- end gray -->
 
 
+    <a class="anchor" class="top" id="simulator"></a>
     <div class="w3-content" style="max-width:1200px;">
       <div class="w3-row-padding">
 	<div class="w3-center">
@@ -401,6 +473,7 @@
       
       <hr>
       
+    <a class="anchor" class="top" id="model"></a>
       <div class="w3-row-padding">
 	<div class="w3-center">
 	  <h2>PIPs++</h2>
@@ -414,7 +487,9 @@
 	  </div>
       </div> <!-- end row-padding -->
     </div> <!-- end 1200 -->
+
     
+    <a class="anchor" class="top" id="paper"></a>
     <div class="w3-light-gray">
       <div class="w3-content" style="max-width:1200px;">
 	<div class="w3-row-padding">
@@ -440,7 +515,7 @@
 	</div> <!-- end row-padding -->
       </div> <!-- end 1200 -->
     </div> <!-- end gray -->
-      
+    
     <div class="w3-content" style="max-width:1200px;">
       <div class="w3-row-padding">
 	<div class="w3-center"><h2>Bibtex</h2></div>
@@ -453,7 +528,59 @@
 	  }
 	</div>
       </div> <!-- end row-padding -->
-    </div> <!-- end 1200 -->
       
+      <hr>
+      
+      <a class="anchor" class="top" id="team"></a>
+      <div class="w3-row-padding w3-content">
+	<div class="w3-center">
+	  <h2>Team</h2>
+	  <div>
+	    <div class="author">
+	      <a href="https://y-zheng18.github.io/">
+		<div class="authorphoto"><img src="https://y-zheng18.github.io/figs/me.jpg"></div>
+		<div>Yang Zheng</div>
+	      </a>
+	    </div>
+	    <div class="author">
+	      <a href="https://www.adamharley.com/">
+		<div class="authorphoto"><img src="https://adamharley.com/images/face_gates2.jpg"></div>
+		<div>Adam W. Harley</div>
+	      </a>
+	    </div>
+	    <div class="author">
+	      <a href="https://cs.stanford.edu/~willshen">
+		<div class="authorphoto"><img src="https://cs.stanford.edu/people/bshen88/assets/img/bokui_shen.jpg"></div>
+		<div>Bokui Shen</div>
+	      </a>
+	    </div>
+	    <div class="author">
+	      <a href="https://stanford.edu/~gordonwz/">
+		<div class="authorphoto"><img src="./assets/gordon.png"></div>
+		<div>Gordon Wetzstein</div>
+	      </a>
+	    </div>
+	    <div class="author">
+	      <a href="http://geometry.stanford.edu/member/guibas">
+		<div class="authorphoto"><img src="./assets/leo.png"></div>
+		<div>Leonidas J. Guibas</div>
+	      </a>
+	    </div>
+	    <!-- <img alt="" src="assets/stanford.png" style="display: block; margin-left: auto; margin-right: auto;width:50%;"> -->
+	  </div>
+	  
+	</div>
+	
+	
+      </div> <!-- end row-padding -->
+      <!-- <hr> -->
+    </div> <!-- end 1200 -->
+    <div class="footer">
+      <div class="w3-row-padding">
+	<p class="w3-center" style="color:#666;">Copyright © 2023. All rights reserved.</p>
+	<p><img alt="" src="assets/stanford_white.png" style="display: block; margin-left: auto; margin-right: auto; width:200px;"></p>
+      </div>
+    </div>
+    
   </body>
 </html>
