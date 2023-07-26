@@ -41,59 +41,12 @@
       background-position: 0 50%;
       background-color: #fff;
       }
-      .bkg2 {
-      background-color: #000;
-      }
       .w3-row-padding{ padding: 50px 50px;}
       .margin-top{ margin-top: 50px;}
       .margin-bottom{ margin-bottom: 50px;}
       .head { height:250px;}
       .container {padding: 0; }
-      .papercontainer {
-	  min-height: 10em;
-	  display: table-cell;
-	  vertical-align: middle
-      }
-      .paper {; }
-      .padright {padding-right:1em; }
-      .padimg { padding-bottom:1em; padding-top: 1em; width: 100%}
-      .nopadimg { width: 100%}
-      .icon {
-	  float: left;
-	  width: 40px;
-	  height: 40px;
-	  margin-right: 5px;
-      }
-      .email {
-	  /* margin-top: 10px; */
-	  padding-top: 10px;
-	  /* color: #555; */
-	  float: right;
-	  height: 0;
-	  opacity: 0;
-	  transition: opacity 0.7s;
-      }
-      .papertable {
-	  width:100%;
-	  border:0px;
-	  border-spacing:0px;
-	  border-collapse:separate;
-	  margin-right:auto;
-	  margin-left:auto;
-	  margin-bottom:2em;
-      }
-      .paperimage {
-	  padding-right:2.5%;
-	  width:50%;
-	  max-width:50%;
-      }
-      .papertext {
-	  width:50%;
-	  vertical-align:middle;
-      }
-      .papertext p,h5 {
-	  margin: 5px 0px;
-      }
+
       ul {
 	  margin: 0 0 20px 0;
 	  list-style-type: circle;
@@ -134,19 +87,6 @@
 	  background-color: #2196F3;
 	  color: white;
       }
-      
-
-      /* .button { */
-      /* 	  background-color: white; */
-      /* 	  color: black; */
-      /* 	  border: 2px solid #008CBA; */
-      /* } */
-
-      /* .button1:hover { */
-      /* 	  background-color: #ff8CBA; */
-      /* 	  color: white; */
-      /* } */
-      
 
       .row {
 	  width: 100%;
@@ -159,13 +99,11 @@
 	  display: table-cell;
 	  vertical-align: middle;
       }
-      
 
       .video-container {
-	  /* min-height: 500px; */
 	  width: 100%;
 	  position: relative;
-	  background-color: #000;
+	  <!-- background-color: #000; -->
       }
       .inline-video-container {
 	  /* min-height: 300px; */
@@ -308,23 +246,21 @@
       }
       
 
-
-
       /* replaces the "cover" image in html5 video */
       #container {
 	  background-image: url("./assets/preview_frame.png");
 	  background-size: cover;
 	  background-position: center;
 	  background-repeat: no-repeat;
-	  background-color: black;
+      background-color: black;
       }
       #video {
 	  opacity: 0;                /* start faded out */
-	  transition: opacity 3s;    /* css fade in */
+	  transition: opacity 2s;    /* css fade in */
       }
       
     </style>
-    <script type='text/javascript' src='http://peoplesriverhistory.us/wp-content/plugins/jquery-updater/js/jquery-3.7.0.min.js?ver=3.7.0' id='jquery-core-js'></script>
+    <script type='text/javascript' src='./assets/jquery-3.7.0.min.js?ver=3.7.0' id='jquery-core-js'></script>
     <script type="text/javascript">
       /* wait for all elements of DOM to be rendered */
       $(document).ready(function() {
@@ -369,7 +305,7 @@
     </div>
     
     
-    <div class="video-container">
+    <div class="video-container" id='container'>
       <video id='video' controls="controls" muted="muted" autoplay="true" loop="true" preload='none'>
 	<source src="./assets/media2-26823.mp4#t=0.1" type="video/mp4" />
       </video>
