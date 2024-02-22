@@ -350,7 +350,7 @@
 
 		      <div class="w3-center" style="padding-top:20px;">
 			<a class="button button-black" href="https://arxiv.org/abs/2307.15055">Paper</a>
-			<a class="button button-black" href="https://drive.google.com/drive/u/1/folders/1lMMHMXrTaFZEugD8ABScvrkmGGSqDe2f">Dataset</a>
+			<a class="button button-black" href="https://drive.google.com/drive/folders/1W6wxsbKbTdtV8-2TwToqa_QgLqRY3ft0?usp=drive_link">Dataset (v1.2)</a>
 			<a class="button button-black" href="https://github.com/y-zheng18/point_odyssey">Simulator</a>
 			<a class="button button-black" href="https://github.com/aharley/pips2">Model</a>
 		      </div>	    
@@ -404,7 +404,7 @@
 	<div class="w3-center">
 	  <h2>Abstract</h2>
 	</div>
-	<p>PointOdyssey is a large-scale synthetic dataset, and data generation framework, for the training and evaluation of long-term fine-grained tracking algorithms. Our goal is to advance the state-of-the-art by placing emphasis on long videos with naturalistic motion. Toward the goal of naturalism, we animate deformable characters using real-world motion capture data, we build 3D scenes to match the motion capture environments, and we render camera viewpoints using trajectories mined via structure-from-motion on real videos. We create combinatorial diversity by randomizing character appearance, motion profiles, materials, lighting, 3D assets, and atmospheric effects. Our dataset currently includes 104 videos, averaging 2,000 frames long, with orders of magnitude more correspondence annotations than prior work. We show that existing methods can be trained from scratch in our dataset and outperform the published variants. Finally, we introduce modifications to the PIPs point tracking method, greatly widening its temporal receptive field, which improves its performance on PointOdyssey as well as on two real-world benchmarks. Our data and code are publicly available.
+	<p>PointOdyssey is a large-scale synthetic dataset, and data generation framework, for the training and evaluation of long-term fine-grained tracking algorithms. Our goal is to advance the state-of-the-art by placing emphasis on long videos with naturalistic motion. Toward the goal of naturalism, we animate deformable characters using real-world motion capture data, we build 3D scenes to match the motion capture environments, and we render camera viewpoints using trajectories mined via structure-from-motion on real videos. We create combinatorial diversity by randomizing character appearance, motion profiles, materials, lighting, 3D assets, and atmospheric effects. Our dataset currently includes 159 videos, averaging 2,000 frames long, with orders of magnitude more correspondence annotations than prior work. We show that existing methods can be trained from scratch in our dataset and outperform the published variants. Finally, we introduce modifications to the PIPs point tracking method, greatly widening its temporal receptive field, which improves its performance on PointOdyssey as well as on two real-world benchmarks. Our data and code are publicly available.
 	</p>
       </div> <!-- end row -->
     </div> <!-- end 1200 -->
@@ -414,12 +414,14 @@
       <div class="w3-row-padding w3-content" style="max-width:1200px;">
 	<div class="w3-center">
 	  <h2>Dataset</h2>
-	  <h4>104 videos. ~163,000 frames. ~20,000 trajectories per video.</h4>
+	  <h4>159 videos. ~200,000 frames. ~20,000 trajectories per video.</h4>
 	  <img style="width:100%;max-width:100%" alt="" src="assets/teaser.gif">
 	</div>
 	<p>To make the data useful for multiple tasks, we provide multi-modal data: RGB, depth, instance segmentation, surface normals, camera intrinsics, camera extrinsics, and 2D and 3D point trajectories. For a subset of the scenes, we include multiple synchronized views.</p>
 	<div class="w3-center">
-	  <a class="button button2" href="https://drive.google.com/drive/u/1/folders/1lMMHMXrTaFZEugD8ABScvrkmGGSqDe2f"><h5>Download from Google Drive</h5></a>
+	  <a class="button button2" href="https://drive.google.com/drive/folders/1W6wxsbKbTdtV8-2TwToqa_QgLqRY3ft0?usp=sharing"><h5>Download v1.2 from Google Drive</h5></a>
+	  <a class="button button2" href="https://huggingface.co/datasets/aharley/pointodyssey/tree/main"><h5>Download v1.2 from HuggingFace</h5></a>
+	  <p>For backup, here are older versions: <a href="https://drive.google.com/drive/folders/1exDkcG1UJpJeOdfQY966KpwHBbFRu5xD?usp=drive_link">v1.0</a> and <a href="https://drive.google.com/drive/folders/1lMMHMXrTaFZEugD8ABScvrkmGGSqDe2f?usp=drive_link">v1.1</a>. Please find release notes <a href="https://github.com/y-zheng18/point_odyssey">here</a>.</p>
 	  <!-- <a class="button button2" href="https://huggingface.co/datasets/aharley/pointodyssey/tree/main"><h5>Download from HuggingFace</h5></a> -->
 	</div>
       </div> <!-- end 1200 -->
